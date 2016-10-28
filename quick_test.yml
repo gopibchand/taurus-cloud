@@ -1,0 +1,23 @@
+---
+execution:
+  -
+    executor: gatling
+    locations:
+      us-east-1: 2
+      us-west-1: 2
+    locations-weighted: false
+    scenario: sample
+modules:
+  blazemeter:
+    browser-open: false
+    token: ffcc066d6a26a790cd73
+  cloud:
+    project: gatling
+    test: intuit_test
+  console:
+    disable: true
+provisioning: cloud    
+scenarios:
+  sample:
+    script: /root/test.jar
+    simulation: com.intuit.tests.SimpleTest
